@@ -14,7 +14,7 @@ Or the alternative title, "How Microsoft shot me in one foot, and then gave me a
 ### Custom Filtering - or the time Microsoft shot me in the foot
 [Azure Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) is an Azure service to help you monitor your applications. It collects log, http requests, exceptions - you name it. It then allows you to view this data in numerous ways, some of them rather clever.
 
-To do this, it C# collects *a lot* of data. Every log statement, outgoing and ingoing http call, every burp and sneeze. Application Insights is (primarily) priced per GB of data ingested - and it's pretty expensive. Some of their competitors charge much less. Humio charges approximately 0.9$ per gb of ingested data, and Datadog charges 0.1$. Application Insights charges a whopping 2.76$ per ingested Gigabyte. And Application Insights can collect *a lot* of gigabytes.
+To do this, C# collects *a lot* of data. Every log statement, outgoing and ingoing http call, every burp and sneeze. Application Insights is (primarily) priced per GB of data ingested - and it's pretty expensive. Some of their competitors charge much less. Humio charges approximately 0.9$ per gb of ingested data, and Datadog charges 0.1$. Application Insights charges a whopping 2.76$ per ingested Gigabyte. And Application Insights can collect *a lot* of gigabytes.
 
 With prices this expensive, you'll probably only want to collect the data you're actually interested in. In our case, we're using Azure Event Hubs, and the Azure SDK for that is *very* chatty with it's http requests, particularly when processing hundreds of messages every second.
 
